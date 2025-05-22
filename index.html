@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<img src="LogoSDMTRmini.png">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Browser Scores Speedometer 3.1</title>
@@ -10,11 +9,11 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #ffffff; /* Light gray background */
+            background-color: #ffffff; /* Bílé pozadí */
         }
         .browser-tile {
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            padding: 1rem; /* Reduced padding (p-4 equivalent) */
+            padding: 1rem; /* Snížené odsazení (ekvivalent p-4) */
         }
         .browser-tile:hover {
             transform: translateY(-5px);
@@ -22,58 +21,60 @@
         }
         .config-button {
             transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
-            width: 220px; /* Further reduced width */
-            height: 60px; /* Reduced height */
+            width: 220px; /* Dále snížená šířka */
+            height: 60px; /* Snížená výška */
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            white-space: normal; /* Allow text to wrap */
-            line-height: 1.1; /* Adjusted line height for smaller text */
-            flex-shrink: 0; /* Prevent shrinking */
-            font-size: 0.875rem; /* Reduced font size (text-sm in Tailwind) */
-            padding: 0.5rem 1rem; /* Reduced padding (px-4 py-2 equivalent) */
+            white-space: normal; /* Povolit zalomení textu */
+            line-height: 1.1; /* Upravená výška řádku pro menší text */
+            flex-shrink: 0; /* Zabraňte zmenšování */
+            font-size: 0.875rem; /* Snížená velikost písma (text-sm v Tailwindu) */
+            padding: 0.5rem 1rem; /* Snížené odsazení (ekvivalent px-4 py-2) */
         }
         .config-button:hover {
             transform: translateY(-2px);
         }
         .config-button.active {
-            background-color: #3b82f6; /* Blue for active button */
+            background-color: #3b82f6; /* Modrá pro aktivní tlačítko */
             color: white;
             box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
         }
-        /* Custom styling for browser logos to make them circular */
+        /* Vlastní stylování pro loga prohlížečů, aby byla kruhová */
         .browser-logo-circle {
-            width: 72px; /* Reduced width (w-18 equivalent) */
-            height: 72px; /* h-18 equivalent) */
+            width: 72px; /* Snížená šířka (ekvivalent w-18) */
+            height: 72px; /* ekvivalent h-18) */
             border-radius: 50%;
-            background-color: white; /* White background for the logo circle */
+            background-color: white; /* Bílé pozadí pro kruh s logem */
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 0.75rem; /* Reduced margin-bottom (mb-3 equivalent) */
-            border: 3px solid white; /* Reduced border */
-            overflow: hidden; /* Ensure image stays within circle */
+            margin-bottom: 0.75rem; /* Snížený spodní okraj (ekvivalent mb-3) */
+            border: 3px solid white; /* Snížený okraj */
+            overflow: hidden; /* Zajistěte, aby obrázek zůstal uvnitř kruhu */
         }
         .browser-logo-circle img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Changed from 'contain' to 'cover' to make the image fill the circle */
+            object-fit: cover; /* Změněno z 'contain' na 'cover', aby se obrázek vyplnil kruh */
         }
         .browser-tile h2 {
-            font-size: 1.125rem; /* Reduced font size (text-lg equivalent) */
-            margin-bottom: 0.5rem; /* Reduced margin-bottom (mb-2 equivalent) */
+            font-size: 1.125rem; /* Snížená velikost písma (ekvivalent text-lg) */
+            margin-bottom: 0.5rem; /* Snížený spodní okraj (ekvivalent mb-2) */
         }
         .browser-tile .score {
-            font-size: 2.25rem; /* Reduced font size (text-4xl equivalent) */
-            margin-bottom: 0.75rem; /* Reduced margin-bottom (mb-3 equivalent) */
+            font-size: 2.25rem; /* Snížená velikost písma (ekvivalent text-4xl) */
+            margin-bottom: 0.75rem; /* Snížený spodní okraj (ekvivalent mb-3) */
         }
         .browser-tile .description {
-            font-size: 0.875rem; /* Reduced font size (text-sm equivalent) */
+            font-size: 0.875rem; /* Snížená velikost písma (ekvivalent text-sm) */
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center py-8 px-4">
+    <img src="https://placehold.co/150x50/cccccc/333333?text=LogoSDMTRmini" alt="LogoSDMTRmini" class="mb-4">
+
     <div class="max-w-6xl w-full bg-white rounded-xl shadow-lg p-8">
         <h1 class="text-4xl font-bold text-gray-800 mb-8 text-center">Web Browser Scores Speedometer 3.1</h1>
 
@@ -101,44 +102,44 @@
     </footer>
 
     <script>
-        // Simulated browser scores data for different configurations (updated)
-        // This data would typically come from an external source (e.g., API or database)
+        // Simulovaná data skóre prohlížečů pro různé konfigurace (aktualizováno)
+        // Tato data by obvykle pocházela z externího zdroje (např. API nebo databáze)
         const browserScores = {
             "i7 13980HX RTX 4090 laptop 32GB RAM DDR5 4800MHz": {
-                "Google Chrome": { score: 35.1, description: "Optimized for extreme performance on high-end gaming laptops." },
-                "Microsoft Edge": { score: 35.5, description: "Very fast and efficient, ideal for modern notebooks." },
-                "Mozilla Firefox": { score: 33.5, description: "Powerful and privacy-focused, with an active community." },
-                "Opera Browser": { score: 34.8, description: "Innovative features and built-in VPN, great on powerful machines." },
-                "Brave Browser": { score: 35.3, description: "Fast and secure, blocks ads and trackers, maximum performance." },
-                "Apple Safari": { score: 34.5, description: "Optimized for the Apple ecosystem, fast and power-efficient." }
+                "Google Chrome": { score: 35.1, description: "Optimalizováno pro extrémní výkon na špičkových herních noteboocích." },
+                "Microsoft Edge": { score: 35.5, description: "Velmi rychlý a efektivní, ideální pro moderní notebooky." },
+                "Mozilla Firefox": { score: 33.5, description: "Výkonný a zaměřený na soukromí, s aktivní komunitou." },
+                "Opera Browser": { score: 34.8, description: "Inovativní funkce a vestavěná VPN, skvělé na výkonných strojích." },
+                "Brave Browser": { score: 35.3, description: "Rychlý a bezpečný, blokuje reklamy a trackery, maximální výkon." },
+                "Apple Safari": { score: 34.5, description: "Optimalizováno pro ekosystém Apple, rychlé a energeticky úsporné." }
             },
             "7800X3D RTX 4080 Super 32GB RAM DDR5 6000MHz CL28": {
-                "Google Chrome": { score: 36.5, description: "Top performance for desktop gaming setups with low latency RAM." },
-                "Microsoft Edge": { score: 36.9, description: "Extremely fast, fully utilizes modern hardware." },
-                "Mozilla Firefox": { score: 34.2, description: "Excellent performance and stability on high-clocked systems." },
-                "Opera Browser": { score: 35.8, description: "Very fast with advanced features, ideal for demanding users." },
-                "Brave Browser": { score: 36.7, description: "Fastest loading and browsing thanks to optimization and blocking." },
-                "Apple Safari": { score: 35.5, description: "Optimized for the Apple ecosystem, fast and power-efficient." }
+                "Google Chrome": { score: 36.5, description: "Špičkový výkon pro desktopové herní sestavy s RAM s nízkou latencí." },
+                "Microsoft Edge": { score: 36.9, description: "Extrémně rychlý, plně využívá moderní hardware." },
+                "Mozilla Firefox": { score: 34.2, description: "Vynikající výkon a stabilita na systémech s vysokou frekvencí." },
+                "Opera Browser": { score: 35.8, description: "Velmi rychlý s pokročilými funkcemi, ideální pro náročné uživatele." },
+                "Brave Browser": { score: 36.7, description: "Nejrychlejší načítání a prohlížení díky optimalizaci a blokování." },
+                "Apple Safari": { score: 35.5, description: "Optimalizováno pro ekosystém Apple, rychlé a energeticky úsporné." }
             },
             "i5 10400 16GB RAM DDR5 2666MHz": {
-                "Google Chrome": { score: 17.3, description: "Reliable performance for everyday use on standard setups." },
-                "Microsoft Edge": { score: 18.3, description: "Good balance between speed and resource consumption." },
-                "Mozilla Firefox": { score: 14.9, description: "Stable performance, suitable for common tasks." },
-                "Opera Browser": { score: 16.2, description: "Smooth operation with useful add-ons." },
-                "Brave Browser": { score: 17.1, description: "Fast page loading thanks to ad blocking." },
-                "Apple Safari": { score: 17, description: "Efficient browser with good power management." }
+                "Google Chrome": { score: 17.3, description: "Spolehlivý výkon pro každodenní použití na standardních sestavách." },
+                "Microsoft Edge": { score: 18.3, description: "Dobrá rovnováha mezi rychlostí a spotřebou zdrojů." },
+                "Mozilla Firefox": { score: 14.9, description: "Stabilní výkon, vhodné pro běžné úkoly." },
+                "Opera Browser": { score: 16.2, description: "Plynulý provoz s užitečnými doplňky." },
+                "Brave Browser": { score: 17.1, description: "Rychlé načítání stránek díky blokování reklam." },
+                "Apple Safari": { score: 17, description: "Efektivní prohlížeč s dobrým řízením spotřeby energie." }
             },
             "i7 10750H RTX 2070 Super laptop 16GB RAM DDR5 2666MHz": {
-                "Google Chrome": { score: 18.5, description: "Good performance for mid-range gaming laptops." },
-                "Microsoft Edge": { score: 19.0, description: "Efficient and fast, suitable for multitasking." },
-                "Mozilla Firefox": { score: 16.5, description: "Reliable and secure on mobile platforms." },
-                "Opera Browser": { score: 17.8, description: "Smooth experience with built-in features." },
-                "Brave Browser": { score: 18.7, description: "Fast loading and privacy protection on the go." },
-                "Apple Safari": { score: 18.2, description: "Optimized for the Apple ecosystem, fast and power-efficient." }
+                "Google Chrome": { score: 18.5, description: "Dobrý výkon pro středně výkonné herní notebooky." },
+                "Microsoft Edge": { score: 19.0, description: "Efektivní a rychlý, vhodné pro multitasking." },
+                "Mozilla Firefox": { score: 16.5, description: "Spolehlivý a bezpečný na mobilních platformách." },
+                "Opera Browser": { score: 17.8, description: "Plynulý zážitek s vestavěnými funkcemi." },
+                "Brave Browser": { score: 18.7, description: "Rychlé načítání a ochrana soukromí na cestách." },
+                "Apple Safari": { score: 18.2, description: "Optimalizováno pro ekosystém Apple, rychlé a energeticky úsporné." }
             }
         };
 
-        // Real browser logos
+        // Skutečná loga prohlížečů
         const browserLogos = {
             "Google Chrome": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Chrome_icon_%28September_2014%29.svg",
             "Microsoft Edge": "https://upload.wikimedia.org/wikipedia/commons/9/98/Microsoft_Edge_logo_%282019%29.svg",
@@ -148,52 +149,64 @@
             "Apple Safari": "https://upload.wikimedia.org/wikipedia/commons/5/52/Safari_browser_logo.svg"
         };
 
-        // Updated browser colors
+        // Aktualizované barvy prohlížečů
         const browserColors = {
-            "Google Chrome": "bg-yellow-500",      // Yellow
-            "Microsoft Edge": "bg-blue-500",       // Blue
-            "Mozilla Firefox": "bg-orange-500",    // Orange
-            "Opera Browser": "bg-red-600",         // Brighter, more vibrant red for Opera
+            "Google Chrome": "bg-yellow-500",      // Žlutá
+            "Microsoft Edge": "bg-blue-500",       // Modrá
+            "Mozilla Firefox": "bg-orange-500",    // Oranžová
+            "Opera Browser": "bg-red-600",         // Jasnější, živější červená pro Operu
             "Brave Browser": "#d93c18",            // Konkrétní hex kód pro Brave
-            "Apple Safari": "bg-gray-600"          // Gray-blue
+            "Apple Safari": "bg-gray-600"          // Šedo-modrá
         };
 
         const browserTilesContainer = document.getElementById('browser-tiles-container');
         const configButtons = document.querySelectorAll('.config-button');
 
-        // Set default configuration to the first new setup
+        // Nastavte výchozí konfiguraci na první nové nastavení
         let currentConfig = "i7 13980HX RTX 4090 laptop 32GB RAM DDR5 4800MHz";
 
         /**
-         * Renders browser tiles based on the selected configuration.
-         * @param {string} config The name of the selected configuration.
+         * Vykreslí dlaždice prohlížečů na základě vybrané konfigurace.
+         * @param {string} config Název vybrané konfigurace.
          */
         function renderBrowserTiles(config) {
-            browserTilesContainer.innerHTML = ''; // Clear existing tiles
+            browserTilesContainer.innerHTML = ''; // Vymažte existující dlaždice
             const scores = browserScores[config];
 
-            for (const browserName in scores) {
-                if (scores.hasOwnProperty(browserName)) {
-                    const browserData = scores[browserName];
-                    const tile = document.createElement('div');
-                    // Updated Tailwind classes for reduced tile size and padding
-                    tile.className = `browser-tile ${browserColors[browserName]} text-white p-4 rounded-xl shadow-lg flex flex-col items-center text-center`;
-                    tile.innerHTML = `
-                        <div class="browser-logo-circle">
-                            <img src="${browserLogos[browserName]}" alt="${browserName} logo" onerror="this.onerror=null;this.src='https://placehold.co/96x96/ffffff/000000?text=Logo'">
-                        </div>
-                        <h2 class="text-lg font-bold mb-2">${browserName}</h2>
-                        <p class="score text-4xl font-extrabold mb-3">${browserData.score}</p>
-                        <p class="description text-sm">${browserData.description}</p>
-                    `;
-                    browserTilesContainer.appendChild(tile);
+            // Převeďte objekt skóre na pole pro snadné řazení
+            const sortedBrowsers = Object.keys(scores).map(browserName => ({
+                name: browserName,
+                score: scores[browserName].score,
+                description: scores[browserName].description
+            }));
+
+            // Seřaďte prohlížeče podle skóre od nejvyššího po nejnižší
+            sortedBrowsers.sort((a, b) => b.score - a.score);
+
+            sortedBrowsers.forEach(browserData => {
+                const tile = document.createElement('div');
+                // Použijeme inline styl pro hex kód Brave, jinak Tailwind třídu
+                if (browserData.name === "Brave Browser") {
+                    tile.style.backgroundColor = browserColors[browserData.name];
+                    tile.className = `browser-tile text-white p-4 rounded-xl shadow-lg flex flex-col items-center text-center`;
+                } else {
+                    tile.className = `browser-tile ${browserColors[browserData.name]} text-white p-4 rounded-xl shadow-lg flex flex-col items-center text-center`;
                 }
-            }
+                tile.innerHTML = `
+                    <div class="browser-logo-circle">
+                        <img src="${browserLogos[browserData.name]}" alt="${browserData.name} logo" onerror="this.onerror=null;this.src='https://placehold.co/96x96/ffffff/000000?text=Logo'">
+                    </div>
+                    <h2 class="text-lg font-bold mb-2">${browserData.name}</h2>
+                    <p class="score text-4xl font-extrabold mb-3">${browserData.score}</p>
+                    <p class="description text-sm">${browserData.description}</p>
+                `;
+                browserTilesContainer.appendChild(tile);
+            });
         }
 
         /**
-         * Sets the active state of the configuration button.
-         * @param {string} activeConfig The name of the active configuration.
+         * Nastaví aktivní stav tlačítka konfigurace.
+         * @param {string} activeConfig Název aktivní konfigurace.
          */
         function setActiveButton(activeConfig) {
             configButtons.forEach(button => {
@@ -205,7 +218,7 @@
             });
         }
 
-        // Add event listeners to configuration buttons
+        // Přidat posluchače událostí k tlačítkům konfigurace
         configButtons.forEach(button => {
                 button.addEventListener('click', () => {
                 currentConfig = button.dataset.config;
@@ -214,7 +227,7 @@
             });
         });
 
-        // Initial rendering on page load
+        // Počáteční vykreslení při načtení stránky
         document.addEventListener('DOMContentLoaded', () => {
             renderBrowserTiles(currentConfig);
             setActiveButton(currentConfig);
